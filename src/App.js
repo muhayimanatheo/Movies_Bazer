@@ -8,6 +8,7 @@ import ExploreFunc from './components/pages/explore';
 import GenreFunc from './components/pages/genre';
 import NewsFunc from './components/pages/news';
 import ShowsFunc from './components/pages/tvshow';
+import MoviesFunc from './components/pages/movies';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/explore" element={<ExploreFunc />} />
           <Route path="/genre" element={<GenreFunc />} />
           <Route path="/news" element={<NewsFunc />} />
+          <Route path="/movies" element={<MoviesFunc />} />
           <Route path="/tvshow" element={<ShowsFunc />} />
         </Route>
       </Routes>

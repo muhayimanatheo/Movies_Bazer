@@ -14,7 +14,7 @@ function NavBar() {
         </Link>
     </div>
     <div className="flex items-center justify-end mt-4 sm:mt-0">
-        <Link to="/home" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
+        <Link to="/" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
             Home
         </Link>
         <Link to="/explore" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
