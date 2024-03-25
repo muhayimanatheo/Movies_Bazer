@@ -1,11 +1,16 @@
 import React from 'react'
-function Card(){
+
+function Card( {Title, Year, Time, src}){
   return(
-    <div >
-      <div className=' h-64 px-4'>
-        <img src={src} className='w-32 h-28' />
-      </div>
+      <div className='w-[10rem] px-4 border-2 border-white'>
+          <img src={src} className="w-full h-full object-cover my-3"/> 
+       
+          <h1 className='text-1xl font-bold text-white'>{Title}</h1>
+          <p className='text-white'>{Year}</p>
+          <p className='text-white'>{Time}</p>
+  
+      
     </div>
   )
 }
-export default Card
+export default Card;

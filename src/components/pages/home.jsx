@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import guardian from "../../images/guardian.png";
 import spiderman from "../../images/spiderman.png";
 import Mask from "../../images/Mask.png";
@@ -5,6 +8,29 @@ import Play from "../../images/Play.png";
 import Card from "../pages/card";
 
 function HomeFunc() {
+  const [userdata, setUserdata] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=498d5fb86f45e1f05cb32796f4d6f180"
+        );
+        if (response.data && response.data.results) {
+          setUserdata(response.data.results);
+          console.log(response.data);
+        } else {
+          console.log('Error: Invalid API response');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    fetchData(); // Call the fetchData function
+  }, []);
+   // Empty dependency array to run the effect only once
+
   return (
     <main className="">
       <div className="flex">
@@ -29,8 +55,6 @@ function HomeFunc() {
                 className="w-10 h-10 mr-2"
               />
               <span className="text-sm">Watch Tutorial</span>
-  
-          Watch Tutorial
           </button>
         </div>
         <div className="w-[500px] relative">
@@ -44,19 +68,32 @@ function HomeFunc() {
       </div>
       {/* {This is line that containing more movies } */}
       <span className="flex mx-5">
-        <div class="">
+        <div className="">
           <img src={Mask} alt="Mask" className="w-full h-auto" />
         </div>
-        <div class="">
+        <div className="">
           <p className="text-white">Trending</p>
         </div>
-        <div class="border-t border-gray-300 my-4 w-[65rem] mx-2"></div>
-        <div class="">
+        <div className="border-t border-gray-300 my-4 w-[65rem] mx-2"></div>
+        <div className="">
           <p className="text-white">See More</p>
         </div>
       </span>
       <section className="flex items-center justify-start my-5 mx-5">
-        <div className="">
+        <div className="grid grid-cols-6 py-24 px-8">
+          {userdata.map((movie,index)=>(
+            <Card 
+          key={index}
+          
+          Title={movie.title}
+          
+          Overview={movie.overview}
+
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+
+          />
+          
+          ))}
           <Card />
         </div>
       </section>
