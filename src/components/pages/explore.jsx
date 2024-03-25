@@ -1,8 +1,9 @@
+import React from 'react';
+
 function ExploreFunc() {
     return (
-      <div>
-        <h1>Explore</h1>
-      </div>
+     <h1 className="text-white">Hello</h1>
+     
     );
   }
   
