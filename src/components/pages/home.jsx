@@ -80,25 +80,18 @@ function HomeFunc() {
         </div>
       </span>
       <section className="flex items-center justify-start my-5 mx-5">
-        <div className="grid grid-cols-6 py-24 px-8">
+        <div className="grid grid-cols-6 py-24 px-8 ">
           {userdata.map((movie,index)=>(
-            <Card 
-          key={index}
-          
+            <Card key={index}
           Title={movie.title}
-          
+          Time={movie.vote_count}
           Overview={movie.overview}
-
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-
           />
-          
           ))}
-          <Card />
         </div>
       </section>
     </main>
   );
 }
-
 export default HomeFunc;

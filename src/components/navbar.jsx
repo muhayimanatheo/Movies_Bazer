@@ -14,22 +14,22 @@ function NavBar() {
         </Link>
     </div>
     <div className="flex items-center justify-end mt-4 sm:mt-0">
-        <Link to="/" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
+        <Link to="/" className="text-white px-4 py-2 hover:text-[#1F35B3] font-bold">
             Home
         </Link>
-        <Link to="/explore" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
+        <Link to="/explore" className="text-white px-4 py-2 hover:text-[#1F35B3]">
             Explore
         </Link>
-        <Link to="/genre" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
+        <Link to="/genre" className="text-white px-4 py-2 hover:text-[#1F35B3]">
             Genre
         </Link>
-        <Link to="/news" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
+        <Link to="/news" className="text-white px-4 py-2 hover:text-[#1F35B3]">
             News
         </Link>
-        <Link to="/movies" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
+        <Link to="/movies" className="text-white px-4 py-2 hover:text-[#1F35B3]">
             Movies
         </Link>
-        <Link to="/tvshow" className="text-white px-4 py-2 hover:text-[#1F35B3] font-semibold">
+        <Link to="/tvshow" className="text-white px-4 py-2 hover:text-[#1F35B3]">
             Tv Shows
         </Link>
     </div>
