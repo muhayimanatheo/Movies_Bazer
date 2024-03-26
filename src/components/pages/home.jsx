@@ -80,7 +80,7 @@ function HomeFunc() {
       <section className="flex items-center justify-start my-5 mx-5">
         <div className="grid grid-cols-6 py-24 px-8 space-x-1 space-y-2">
           {userdata.map((movie, index) => (
-            <NavLink key={index} to={`/details/${movie.id}`}>
+            <NavLink key={index} to={`/explore/${movie.id}`}>
               <Card
                 Title={movie.title}
                 Time={movie.vote_count}

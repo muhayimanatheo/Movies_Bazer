@@ -17,8 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomeFunc />} />
-          <Route path ="/details/:id" element={<Details/>}/>
-          <Route path="/explore" element={<ExploreFunc />} />
+          {/*<Route path ="/details/:id" element={<Details/>}/>*/}
+          <Route path="/explore/:id" element={<ExploreFunc />} />
           <Route path="/genre" element={<GenreFunc />} />
           <Route path="/news" element={<NewsFunc />} />
           <Route path="/movies" element={<MoviesFunc />} />
