@@ -9,6 +9,7 @@ import GenreFunc from './components/pages/genre';
 import NewsFunc from './components/pages/news';
 import ShowsFunc from './components/pages/tvshow';
 import MoviesFunc from './components/pages/movies';
+import Details from './components/detail/details';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomeFunc />} />
+          <Route path ="/details/:id" element={<Details/>}/>
           <Route path="/explore" element={<ExploreFunc />} />
           <Route path="/genre" element={<GenreFunc />} />
           <Route path="/news" element={<NewsFunc />} />

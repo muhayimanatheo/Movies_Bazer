@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import guardian from "../../images/guardian.png";
 import spiderman from "../../images/spiderman.png";
 import Mask from "../../images/Mask.png";
 import Play from "../../images/Play.png";
 import Card from "../pages/card";
+import { NavLink } from "react-router-dom";
 
 function HomeFunc() {
   const [userdata, setUserdata] = useState([]);
@@ -20,16 +21,16 @@ function HomeFunc() {
           setUserdata(response.data.results);
           console.log(response.data);
         } else {
-          console.log('Error: Invalid API response');
+          console.log("Error: Invalid API response");
         }
       } catch (error) {
         console.log(error);
       }
     };
-  
+
     fetchData(); // Call the fetchData function
   }, []);
-   // Empty dependency array to run the effect only once
+  // Empty dependency array to run the effect only once
 
   return (
     <main className="">
@@ -48,13 +49,10 @@ function HomeFunc() {
           </p>
           <button
             type="button"
-            className="flex text-white border-2 border-white my-5 items-center">
-              <img
-                src={Play}
-                alt="Play"
-                className="w-10 h-10 mr-2"
-              />
-              <span className="text-sm">Watch Tutorial</span>
+            className="flex text-white border-2 border-white my-5 items-center"
+          >
+            <img src={Play} alt="Play" className="w-10 h-10 mr-2" />
+            <span className="text-sm">Watch Tutorial</span>
           </button>
         </div>
         <div className="w-[500px] relative">
@@ -81,13 +79,15 @@ function HomeFunc() {
       </span>
       <section className="flex items-center justify-start my-5 mx-5">
         <div className="grid grid-cols-6 py-24 px-8 space-x-1 space-y-2">
-          {userdata.map((movie,index)=>(
-            <Card key={index}
-          Title={movie.title}
-          Time={movie.vote_count}
-          Overview={movie.overview}
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          />
+          {userdata.map((movie, index) => (
+            <NavLink key={index} to={`/details/${movie.id}`}>
+              <Card
+                Title={movie.title}
+                Time={movie.vote_count}
+                Overview={movie.overview}
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              />
+            </NavLink>
           ))}
         </div>
       </section>
