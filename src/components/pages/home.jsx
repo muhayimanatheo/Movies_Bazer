@@ -51,8 +51,8 @@ function HomeFunc() {
             type="button"
             className="flex text-white border-2 border-white my-5 items-center"
           >
-            <img src={Play} alt="Play" className="w-10 h-10 mr-2" />
-            <span className="text-sm">Watch Tutorial</span>
+            <img src={Play} alt="Play" className="w-10 h-10 mr-2 mx-1" />
+            <span className="text-sm mx-2">Watch Tutorial</span>
           </button>
         </div>
         <div className="w-[500px] relative">
