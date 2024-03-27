@@ -21,7 +21,7 @@ function App() {
           <Route path="/explore/:id" element={<ExploreFunc />} />
           <Route path="/genre" element={<GenreFunc />} />
           <Route path="/news" element={<NewsFunc />} />
-          <Route path="/movies" element={<MoviesFunc />} />
+          <Route path="/movies/:id" element={<MoviesFunc />} />
           <Route path="/tvshow" element={<ShowsFunc />} />
         </Route>
       </Routes>
