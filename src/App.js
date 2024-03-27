@@ -9,13 +9,13 @@ import GenreFunc from './components/pages/genre';
 import NewsFunc from './components/pages/news';
 import ShowsFunc from './components/pages/tvshow';
 import MoviesFunc from './components/pages/movies';
-import Details from './components/detail/details';
+import NavBar from './components/navbar';
 
 function App() {
   return (
     <Router>
+      <NavBar>
       <Routes>
-        <Route path="/" element={<Layout />}>
           <Route index element={<HomeFunc />} />
           {/*<Route path ="/details/:id" element={<Details/>}/>*/}
           <Route path="/explore/:id" element={<ExploreFunc />} />
@@ -23,8 +23,8 @@ function App() {
           <Route path="/news" element={<NewsFunc />} />
           <Route path="/movies/:id" element={<MoviesFunc />} />
           <Route path="/tvshow" element={<ShowsFunc />} />
-        </Route>
       </Routes>
+      </NavBar>
     </Router>
   );
 }
